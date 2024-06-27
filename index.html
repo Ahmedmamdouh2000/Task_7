@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>منصة بسطها لك</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            color: #5cab65;
+            direction: rtl;
+            text-align: right;
+        }
+
+        header {
+            background-color: #16b813;
+            padding: 20px;
+        }
+
+        nav {
+            position: relative;
+        }
+
+        .menu-button {
+            display: none;
+            background-color: #16b813;
+            color: #fff;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        nav ul li {
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #000000;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+
+        nav ul li a:hover, .register-btn {
+            background-color: yellow;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            justify-content: center;
+            background-image: url(Animated\ Shape\ \(1\).svg);
+        }
+
+        .main-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #ffffff;
+            margin-right: 190px;
+        }
+
+        .main-content img {
+            width: 100%;
+            height: 100%;
+            max-height: 400px;
+            margin-left: 16px;
+        }
+        .text-content {
+            max-width: 600px;
+        }
+
+        .text-content h1 {
+            font-size: 50px;
+            color: #079305;
+        }
+
+        .text-content p {
+            font-size: 18px;
+            color: #333;
+        }
+
+        .action-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .action-buttons a {
+            text-decoration: none;
+            color: #000000;
+            padding: 15px 30px;
+            border-radius: 25px;
+            font-size: 18px;
+            text-align: center;
+        }
+
+        .start-button {
+            background-color: rgb(223, 223, 5);
+        }
+
+        .welcome-section {
+            text-align: center;
+            padding: 50px;
+        }
+
+        .welcome-section h1 {
+            color: #079305;
+            font-size: 50px;
+        }
+
+        .welcome-section p {
+            color: #333;
+            font-size: 18px;
+        }
+
+        .join-btn {
+            background-color: rgb(223, 223, 5);
+            color: #000000;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        .features-goals {
+            display: flex;
+            justify-content: space-around;
+            padding: 50px;
+            background-image: url(Animated\ Shape.svg);
+            flex-wrap: wrap;
+        }
+
+        .features, .goals {
+            max-width: 45%;
+            min-width: 300px;
+            margin: 10px;
+        }
+
+        .features h2, .goals h2 {
+            color: #000;
+        }
+
+        .features ul, .goals ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .features ul li, .goals ul li {
+            background-color: #048937;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            color: #fff;
+        }
+
+        footer {
+            background-color: #16b813;
+            padding: 20px;
+            text-align: center;
+            color: #fff;
+            margin-top: 20px;
+        }
+
+        .social-icons {
+            margin-top: 10px;
+        }
+
+        .social-icons a {
+            text-decoration: none;
+            color: #fff;
+            margin: 0 10px;
+            font-size: 24px;
+        }
+
+        @media (max-width: 768px) {
+            .main-content {
+                margin-right: 0;
+                padding: 20px;
+            }
+
+            .text-content h1 {
+                font-size: 36px;
+            }
+
+            .text-content p {
+                font-size: 16px;
+            }
+
+            .features, .goals {
+                max-width: 100%;
+                min-width: 100%;
+            }
+
+            nav ul {
+                display: none;
+                flex-direction: column;
+                align-items: flex-start;
+                width: 100%;
+                background-color: #16b813;
+            }
+
+            nav ul li {
+                margin: 5px 0;
+                width: 100%;
+                text-align: center;
+            }
+
+            nav ul li a {
+                display: block;
+                width: 100%;
+                padding: 10px 0;
+            }
+
+            .menu-button {
+                display: block;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .text-content h1 {
+                font-size: 24px;
+            }
+
+            .text-content p {
+                font-size: 14px;
+            }
+
+            .start-button {
+                font-size: 16px;
+                padding: 10px 20px;
+            }
+
+            .join-btn {
+                font-size: 16px;
+                padding: 10px 20px;
+            }
+
+            .welcome-section h1 {
+                font-size: 24px;
+            }
+
+            .welcome-section p {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <button class="menu-button" onclick="toggleMenu()">☰ القائمة</button>
+            <ul>
+                <li><a href="#">الرئيسية</a></li>
+                <li><a href="#">عنا</a></li>
+                <li><a href="#">السنوات الدراسية</a></li>
+                <li><a href="#">الأسئلة الشائعة</a></li>
+                <li><a href="#">تواصل معنا</a></li>
+                <li><a href="#" class="register-btn">سجل معنا</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+            <div class="main-content">
+                <div class="text-content">
+                    <h1>منصة الأب الروحي</h1>
+                    <p>منصة متكاملة بها كل ما يحتاجه الطالب ليتفوق</p>
+                    <div class="action-buttons">
+                        <a href="#" class="start-button">ابدأ رحلتك الآن</a>
+                    </div>
+                </div>
+                <img src="New-Profile-hero.bd0ed24ff94f80d4b949b15350f35824.svg" alt="Student Image">
+            </div>
+        </div>
+        <section class="welcome-section">
+            <h1>مرحبا بك في منصة الأدب الروحي</h1>
+            <p>منصة محمد التهامي لتدريس منهج الأحياء للثانوية و الأزهر. كل ما يتعلق بمنهج الأدب للثانوية العامة.</p>
+            
+            <img src="R.png" width="200px" alt=""><br><button class="join-btn">انضم الآن</button>
+        </section>
+        <section class="features-goals">
+            <div class="features">
+                <h2>مميزات المنصة</h2>
+                <ul>
+                    <li>50 محاضرات شهريا مسجلين بشرح وجزء</li>
+                    <li>امتحانات إلكترونية</li>
+                    <li>متابعة دورية</li>
+                    <li>دورات استفسار المنهجي</li>
+                    <li>دعم فني</li>
+                    <li>مذكرات pdf مجانية</li>
+                </ul>
+            </div>
+            <div class="goals">
+                <h2>أهداف المنصة</h2>
+                <ul>
+                    <li>توفير مفاهيم أساسية و شاملة</li>
+                    <li>توجيه الطالب نحو التفكير العلمي</li>
+                    <li>توجيه الطالب نحو التطبيق العملي</li>
+                    <li>تشجيع التفاعل و المشاركة</li>
+                    <li>تقديم المواد بشكل متميز</li>
+                    <li>توفير دعم إضافي للطالب</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>رقم الهاتف: 01029285397</p>
+        <div class="social-icons">
+            <a href="https://www.facebook.com" target="_blank">فيسبوك</a>
+            <a href="https://www.twitter.com" target="_blank">تويتر</a>
+            <a href="https://www.instagram.com" target="_blank">إنستغرام</a>
+            <a href="https://www.youtube.com" target="_blank">يوتيوب</a>
+        </div>
+    </footer>
+</body>
+</html>
